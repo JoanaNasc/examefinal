@@ -45,51 +45,6 @@ class Functions {
         //valida email, se houver erro retorna o erro na variavel de sessao errors
         return $validate;
     }
-
-    /*
-        função para enviar o email com a messagem e o token de confimaçao
-    */
-    /*public static function sendConfirmationEmail($email,$message){
-        $to = $email;  // email para onde vai ser enviado
-        $subject = 'Please check your email';
-        $headers = 'From: jnascimento@growin.pt';  // Replace with a valid address on your domain
-       
-        $mailSent = mail($to, $subject, $message, $headers);
-        return $mailSent;
-    }*/
-    
-
-    /*
-        função para enviar a mensagem para o slack com a messagem e o token de confimaçao
-    */
-    public static function messageToSlack($message){
-        
-        $sURL = "https://slack.com/api/chat.postMessage"; // The POST URL
-
-        $data = http_build_query([
-            "token" =>
-            "xoxb-101259630004-520202224629-DPHnA8VClMhljp6nkOQzR5BH",
-            "channel" => "#botecho", // Canal para onde querem enviar
-            "text" => "(Joana)Confirm Email send in" . date("H:i:s") ."\n" .$message,
-            "username" => "AcademiaPHP Bot",
-        ]);
-        $aHTTP = array(
-            'http' => // The wrapper to be used
-            array(
-            'method'  => 'POST', // Request Method
-            // Request Headers Below
-
-            'header'  => 'Content-type: application/x-www-form-urlencoded',
-            'content' => $data
-            )
-        );
-        //cria um conjunto de informações referentes a um pedido http
-        $context = stream_context_create($aHTTP);
-        //faz o pedido http para o URL definido em cima com o contexto que foi criado com a função anterior
-        // como nao temos path criamos a função a false
-        $contents = file_get_contents($sURL, false, $context);
-    }
-
     /*
         funçao para zipar o projecto
     */

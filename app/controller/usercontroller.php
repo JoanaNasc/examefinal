@@ -93,12 +93,7 @@ class UserController{
                 LogController::post($argsToLog);
                 //enviar e-mail
                 $token = bin2hex($user->email);//token gerado a partir do email   
-                $messageToSlack = "Your information is:
-                    username: $user->username
-                    password:$user->password
-                    <h1>PLEASE NOTE: You only have 5 minutes to confirm!</h1><br/>
-                    <h6>If you have not registered, please ignore this email.</h6>";
-
+         
                 $message = <<<EOT
 <html lang="en">
 <head>
@@ -121,7 +116,6 @@ EOT;
                     $argsToLog ['request'] = 'Send Email';
                     $argsToLog ['description'] = 'Email sent to: '.$user->email;
                     LogController::post($argsToLog);
-                    Functions::messageToSlack(strip_tags($message));
                     return true;
                 }else{
                     $argsToLog ['username'] = $user->username;
