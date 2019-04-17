@@ -1,0 +1,32 @@
+
+RewriteEngine on
+#redirect to a page inside /public with 404.php
+ErrorDocument 404 /404.php
+
+
+#user
+RewriteRule ^/?user/$ index.php?ct=UserController&method=login
+RewriteRule ^/?user/create$ index.php?ct=UserController&method=create
+RewriteRule ^/?user/new$ index.php?ct=UserController&method=new
+
+#confirm email
+RewriteRule  ^/?confirmemail/([A-Za-z0-9-\s]+)$ index.php?ct=UserController&hash=$1&method=confirmemail
+
+
+#logs
+RewriteRule ^/?logs$ index.php?ct=LogController&method=get
+RewriteRule ^/?logs/csv$ index.php?ct=LogController&method=getCsv
+
+#logout
+RewriteRule ^/?logout$ index.php?ct=UserController&method=logout
+
+#zip
+RewriteRule ^/?zip$ index.php?ct=ZipController&method=zip
+
+
+#api
+RewriteRule ^/?api/auth/$ index.php?ct=UserController&method=login
+RewriteRule ^/?api/register$ index.php?ct=UserController&method=create
+RewriteRule ^/?api/alter$ index.php?ct=UserController&method=alter
+RewriteRule ^/?api/indexes/([A-Za-z0-9-\s]+)/([A-Za-z0-9-\s]+)$ index.php?ct=IndexesController&name=$1&hash=$2&method=getIndexesByName
+RewriteRule ^/?api/indexes$ index.php?ct=IndexesController&method=get

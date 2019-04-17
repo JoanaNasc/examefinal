@@ -1,0 +1,19 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer": "^6.2",
+        "guzzlehttp/guzzle": "^6.3",
+        "phpunit/phpunit": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "app\\controller\\": "app/controller",
+            "vendor\\":"vendor/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "app\\test\\": "tests/"
+        }
+    }
+}
