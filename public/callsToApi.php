@@ -135,15 +135,15 @@ function getApi($url,$method,$data=null){
     return $result;
 } 
 
-
+register();
+//alter();
 
 $hash=login();
 
-//register();
-//alter();
+
 //getAllIndexes($hash);
 //getIndexByName('AUS200',$hash);
-getAllLogs($hash);
+//getAllLogs($hash);
 //getAllLogsCSV($hash);
 //saveCSVMoreThan7k($hash);
 //saveCSVLessThan7k($hash);

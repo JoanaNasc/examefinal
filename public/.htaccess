@@ -15,3 +15,6 @@ RewriteRule ^/?api/indexes$ index.php?ct=IndexesController&method=get
 RewriteRule ^/?api/logs$ index.php?ct=LogController&method=get
 RewriteRule ^/?api/logs/getCsv$ index.php?ct=LogController&method=getCsv
 RewriteRule ^/?api/logs/saveCsv$ index.php?ct=LogController&method=saveCsv
+
+#linha para bloquear o fichero callsToApi.php
+#AuthUserFile /var/www/examefinal.test/public/.htpasswd AuthName "/var/www/examefinal.test/vendor/callsToApi.php" AuthType Basic  require valid-user
