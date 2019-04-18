@@ -17,7 +17,7 @@
 
     require PROJECT_PATH.'vendor/autoload.php';
     include PROJECT_PATH.'vendor/db_functions.php';
-
+    require PROJECT_PATH . 'vendor/csrf_toke_functions.php';
     
     function my_autoload($className)
     {

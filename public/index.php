@@ -1,7 +1,12 @@
 <?php 
-//require '../vendor/boot.php';
+require '../vendor/boot.php';
 
-require '/var/www/examefinal.test/vendor/boot.php';
+$ip = $_SERVER['SERVER_ADDR'];
+
+$csrf=create_csrf_token();
+$_SESSION['csrf_token']=$csrf;
+
+
 $path = isset($_SERVER['REDIRECT_QUERY_STRING']) ? ltrim($_SERVER['REDIRECT_QUERY_STRING'], '/') :'';
 
 $elements = explode('/', $path);    
@@ -17,11 +22,12 @@ if(isset($_POST) && count($_POST)!==0){
 }else if(isset($_GET)&& count($_GET)!==0){
     $data=$_GET;
 }
-
-
-$controller = 'App\Controller\\' . $controller;
-$ct = new $controller;
-echo $ct->$method($data);
-
+if(csrf_token_is_valid($csrf)){
+    $controller = 'App\Controller\\' . $controller;
+    $ct = new $controller;
+    echo $ct->$method($data);
+}else{
+    return json_encode('Invalid Argument');
+}
 
 ?>

@@ -21,13 +21,15 @@ class LogController{
         $log->timestamp = date('Y-m-d H:i:s');
 
         $result=$log->save();
+        return $result;
     }
     /*
         get:
             -> Chama a função find_all do modelo Log e faz render de todos os Logs recebidos da base de dados
     */
 
-    public static function get(){
+    public static function get(){ 
+        
         if(count($_POST)==0){
             return json_encode("'Error'=>'Hash not valid'");
         } else{
@@ -40,7 +42,7 @@ class LogController{
     }
 
     public static function getCsv(){
-        
+       
         if(count($_POST)==0){
             return json_encode("'Error'=>'Hash not valid'");
         } else{
