@@ -3,7 +3,7 @@
 Para a testar este projecto é necessario:
 -> fazer chamadas guzzle e passar os parametros necessários a partir do JSON:
    	->login():
-          - retorna a hash e o csrf_token precisos para passar aos metodos seguintes
+          - retorna a hash precisos para passar aos metodos seguintes
           - Passar e-mail e password em json
 	  ->register():
           - passar e-mail.
