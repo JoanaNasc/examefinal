@@ -2,8 +2,8 @@
 namespace app\controller;
 
 use app\Log;
-use vendor\Foundationphp\Exporter\Csv; 
-use vendor\Foundationphp\Psr4Autoloader;
+use app\controller\UserController;
+use vendor\Functions; 
 /*
     Classe que vai gravar os Logs na base de dados
 */
@@ -28,30 +28,67 @@ class LogController{
     */
 
     public static function get(){
-        $logs = Log::find_all();
-        return json_encode($logs);
-    }
-
-    public static function getCsv(){
-        $log = new Log();
-        $results = $log->find_data_to_export();
-
-        $loader = new Psr4Autoloader();
-        $loader->register();
-        $loader->addNamespace("Foundationphp","Foundationphp");
-        try{
-            $options['delimiter']="\t";
-            
-            new Csv($results,'logs.csv',$options);
-        }catch(Exception $e){
-            $error=$e->getMessage();
+        if(count($_POST)==0){
+            return json_encode("'Error'=>'Hash not valid'");
+        } else{
+            if(!UserController::is_logged_in($_POST['hash'])){
+                return json_encode("'Error'=>'Hash not valid'");
+            }
+            $logs = Log::find_all();
+            return json_encode($logs);
         }
     }
 
-    public static function saveCsv(){
+    public static function getCsv(){
         
+        if(count($_POST)==0){
+            return json_encode("'Error'=>'Hash not valid'");
+        } else{
+            if(!UserController::is_logged_in($_POST['hash'])){
+                return json_encode("'Error'=>'Hash not valid'");
+            }
+            $log = new Log();
+            $results =(array)$log->find_all(); 
+            
+            //Give our CSV file a name.
+            $csvFileName = RESOURCES_PATH.'/log.csv';
+
+            //Open file pointer.
+            $fp = fopen($csvFileName, 'w');
+            $firstLine = (array) $results[0];
+            array_pop($firstLine);
+            $headers = array_keys($firstLine);print_r($headers);
+            fputcsv($fp,$headers);
+            
+            $firstLineValues =array_values($firstLine);
+            fputcsv($fp, $firstLineValues); 
+            $result = (array)$results;
+            //Loop through the associative array.
+            for($i=1;$i < count($result); $i++){ 
+                $values = (array)$result[$i];
+                array_pop($values);
+                $r=array_values($values);
+                //Write the row to the CSV file.
+                fputcsv($fp, $r);
+            }
+            
+            //Finally, close the file pointer.
+            fclose($fp);
+        }
     }
 
+    public static function saveCsv(){ 
+
+        if(count($_POST)==0){
+            return json_encode("'Error'=>'Hash not valid'");
+        } else{
+            if(!UserController::is_logged_in($_POST['hash'])){
+                return json_encode("'Error'=>'Hash not valid'");
+            }
+            $funtion = new Functions();
+            return $funtion->upload_file($_POST['path']);
+        }
+    }
 }
 
 

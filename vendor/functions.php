@@ -45,48 +45,109 @@ class Functions {
         //valida email, se houver erro retorna o erro na variavel de sessao errors
         return $validate;
     }
-    /*
-        funçao para zipar o projecto
+    
+
+    /***
+     * FUNÇÕES PARA O UPLOAD DO FICHEIRO EM SEGURANÇA
+     * 
+     */
+   /*
+	Executa o upload atraves de uma serie de validações
+	se o arquivo passar nas validaçoes vai para a directoria de upload
+	e retira as permissoes de execução
     */
-    function zipProject(){
-        //pasta a ser zipada
-        $rootFolder = PROJECT_PATH;
+    function upload_file($field_name) {
+       
+        $upload_path =dirname(dirname(__FILE__)).'/resources/receivedFiles/';
+        $max_file_size=1024;//1kb expressed in bytes
+        
+        if(isset($_FILES[$field_name])) {
+            echo 'inside if(isset($_FILES[$field_name])) ';
+            $file_name = sanitize_file_name($_FILES[$field_name]['name']);
 
-        //nome do zip com extensão
-        $zipName ='Joana'.date("YmdHis").'.zip';
-        //criação do zip
-        $zip= New ZipArchive();
-        $zip->open(SAFE_FILES_PATH.'/'.$zipName);
+            $path_parts = pathinfo($file_name);
+            $file_extension = $path_parts['extension'];
 
-        //cria o ficheiro zip, caso já esteja criado reescreve o ficheiro.
-        $zipCreated = $zip->open(SAFE_FILES_PATH.'/'.$zipName, ZipArchive::CREATE | ZipArchive::OVERWRITE);
-        //caso de erro
-        if(!$zipCreated){
-            echo 'Zip creation failed, code:' . $zipCreated;
-            return false;
-        }
+            $file_type = $_FILES[$field_name]['type'];
+            $tmp_file  = $_FILES[$field_name]['tmp_name'];
+            $error 		 = $_FILES[$field_name]['error'];
+            $file_size = $_FILES[$field_name]['size'];
 
+            $file_path = $upload_path .'/'.$file_name;
 
-        //percorre a pasta recursivamente à procura dos ficheiros que lá existam para os puder adicionar ao zip
-        $files = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($rootFolder),
-            RecursiveIteratorIterator::LEAVES_ONLY
-        );
-
-        //criação do zip de forma recursiva
-        foreach ($files as $file) {
-            //só adiciona no zip os ficheiros, ignora as directorias.
-            if(!$file->isDir()){
-                    $filePath = $file->getRealPath();
-                    $relativePath = substr($filePath, strlen($rootFolder));
-                    $zip->addFile($filePath, $relativePath);
-            }
+            if($error > 0) {
+                // Display errors caught by PHP
+                return json_encode("Error: " . file_upload_error($error));
             
-        }
+            } elseif( !is_uploaded_file($tmp_file)){
+                return json_encode("Error:Does not reference a recently upload file.<br/>");
+            }else if($file_size>$max_file_size){
+                return json_encode("Error: File size is too big.<br />");
+    
+            } elseif(strcmp($file_extension, 'csv') !== 0){
+                //verifica mos se a extensão do ficheiro é csv se não for  nao deixa fazer upload
+                return json_encode("Error: Not an allowed file extension.<br />");
+            
+            } elseif(file_exists($file_path)){
+                return json_encode("Error:A file with that name already exists in target location.<br/>");
+            }else {
+                // Success!
+                $message = "File was uploaded without errors.<br />";
+                $message .= "File name is '{$file_name}'.<br />";
+                $message .= "Uploaded file size was {$file_size} bytes.<br />";
 
-        $zip->close();
-        return true; 
+                // filesize() is most useful when not working with uploaded files.
+                $tmp_filesize = filesize($tmp_file); // always in bytes
+                //mover para a pasta correcta
+                if(move_uploaded_file($tmp_file,$file_path)){
+                    $message .= "File moved to:{$file_path}.<br/>";
+                }
+                //restringir permissoes do ficheiro
+                if(chmod($file_path,0644)){
+                    $message .= "Execute permissions removed from file.<br/>";
+                    $file_permissions = file_permissions($file_path);
+                    $message .= "File permissions are now '{$file_permissions}'.<br/>";
+                }else{
+                    $message .= "Error:Execute permissions could not be removed.<br/>";
+                }
+                return json_encode($message);
+            }
+        }
+    }
+    /*alterar as permissoes do ficheiro*/
+    function file_permissions($file){
+        $numeric_perms = fileperms($file);//retorna um valor numerico
+        $octal_perms = sprintf('%o',$numeric_perms);//transforma em octal
+        return substr($octal_perms,-4);
     }
 
+    function sanitize_file_name($filename){
+        $filename = preg_replace("/[^A-Za-z0-9_\-\.]|[\.]{2}/","",$filename);
+        $filename = basename($filename);
+        return $filename;
+    }
+
+    //verifica se contem php
+    function file_contains_php($file){
+        $contents = file_get_contents($file);
+        $position = strpos($contents,'<?php');
+        return $position!==false;
+    }
+    //Fornece mensagens de erro 
+    // para os erros de upload de arquivo.
+    function file_upload_error($error_integer) {
+        $upload_errors = array(
+            // http://php.net/manual/en/features.file-upload.errors.php
+            UPLOAD_ERR_OK 				=> "No errors.",
+            UPLOAD_ERR_INI_SIZE  	=> "Larger than upload_max_filesize.",
+        UPLOAD_ERR_FORM_SIZE 	=> "Larger than form MAX_FILE_SIZE.",
+        UPLOAD_ERR_PARTIAL 		=> "Partial upload.",
+        UPLOAD_ERR_NO_FILE 		=> "No file.",
+        UPLOAD_ERR_NO_TMP_DIR => "No temporary directory.",
+        UPLOAD_ERR_CANT_WRITE => "Can't write to disk.",
+        UPLOAD_ERR_EXTENSION 	=> "File upload stopped by extension."
+        );
+        return $upload_errors[$error_integer];
+    }
 }
 ?>

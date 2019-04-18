@@ -6,6 +6,8 @@ use vendor\MyView;
 use vendor\Functions;
 use app\controller\LogController;
 use app\controller\SwiftMailerController;
+use app\EmailsToRegist;
+
 /*
     Classe para executar os metodos de user:
         -> login
@@ -45,18 +47,17 @@ class UserController{
                 
                 $toReturn['login'] =hash('sha256',$userExists->hashed_password);
                 User::update_last_login($userExists->id,$time,$toReturn['login']);
-
+                $argsToLog ['username']=$username;
                 $argsToLog ['request'] = 'Login';
                 $argsToLog ['description'] = 'Login from ip:'.$_SERVER['REMOTE_ADDR'];
                 LogController::post($argsToLog);
-              
+               
                 return json_encode($toReturn);
             }else{
                 $errors[] = 'Username or Password wrong!';
                 return json_encode($errors);
             }
         }else{
-            $myview->errors=$errors;
             return json_encode($errors);
         }
     }
@@ -72,7 +73,13 @@ class UserController{
     */
     public static function create($args){
         $user = new User();
-        
+        $emails = new EmailsToRegist();
+        $result = $emails->find_by_email($args['email']);
+
+        if(!$result){
+            return json_encode('Email not permitted');
+        }
+
         $user->email = $args['email'];
         $user->username = $args['email'];
         

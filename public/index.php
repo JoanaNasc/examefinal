@@ -1,6 +1,7 @@
 <?php 
-require '../vendor/boot.php';
+//require '../vendor/boot.php';
 
+require '/var/www/examefinal.test/vendor/boot.php';
 $path = isset($_SERVER['REDIRECT_QUERY_STRING']) ? ltrim($_SERVER['REDIRECT_QUERY_STRING'], '/') :'';
 
 $elements = explode('/', $path);    
@@ -17,12 +18,10 @@ if(isset($_POST) && count($_POST)!==0){
     $data=$_GET;
 }
 
-if(empty($elements[0])) {   
-   app\controller\UserController::displayWelcome();
-}else {
-    $controller = 'App\Controller\\' . $controller;
-    $ct = new $controller;
-    echo $ct->$method($data);
-}
+
+$controller = 'App\Controller\\' . $controller;
+$ct = new $controller;
+echo $ct->$method($data);
+
 
 ?>

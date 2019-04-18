@@ -1,4 +1,9 @@
 <?php
+    ini_set("log_errors", 1);
+    ini_set("error_log", "resources/error_log.log");
+    
+
+
     ob_start();
     session_start();
     //Definição de variaveis para as pastas do projecto
@@ -12,8 +17,8 @@
 
     require PROJECT_PATH.'vendor/autoload.php';
     include PROJECT_PATH.'vendor/db_functions.php';
-   
-   
+
+    
     function my_autoload($className)
     {
         $filename = PROJECT_PATH . str_replace("\\", '/', $className) . ".php";

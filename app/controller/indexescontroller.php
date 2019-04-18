@@ -92,17 +92,20 @@ class IndexesController{
             -> Chama a funcção find_by_id do model Indexes e faz render dos dados retornados pela BD
             -> chama o controller de logs para gravar o pedido recebido
     */
-    public static function getIndexesByName($args){
-        if(!isset($args['hash'])){
-            return json_encode("'Error'=>'Hash not valid'");
+    public static function getIndexesByName(){
+   
+        if(!isset($_POST['hash'])){
+            $error[]='Hash not valid';
+            return json_encode($error);
         } else{
-            if(!UserController::is_logged_in($args['hash'])){
-                return json_encode("'Error'=>'Hash not valid'");
+            if(!UserController::is_logged_in($_POST['hash'])){
+                $error[]='Hash not valid';
+                return json_encode($error);
             }
             $argsToLog ['request'] = 'Get Indexes By Name';
-            $argsToLog ['description'] = 'Get information to index with Name: ' . $args['name'];
+            $argsToLog ['description'] = 'Get information to index with Name: ' . $_GET['name'];
             LogController::post($argsToLog);
-            $index= Indexes::find_by_name($args['name']);
+            $index= Indexes::find_by_name($_GET['name']);
             
             return  json_encode($index);
         }

@@ -6,6 +6,7 @@ include dirname(dirname(__FILE__)).'/vendor/boot.php';
 use PHPUnit\Framework\TestCase;
 
 use app\controller\IndexesController;
+use app\controller\UserController;
 use vendor\DatabaseObject;
 use vendor;
 
@@ -14,6 +15,13 @@ class IndexesControllerTest extends TestCase{
     public $database;
 
     public function setUp():void{ 
+        $this->user = new UserController();
+        $args['username'] = 'JoanaNasc';
+        $args['password'] = 'Jnascimento123*';
+        $_SERVER["REMOTE_ADDR"] ='127.0.0.1';
+        $result = json_decode($this->user->login($args),true);
+        
+        $this->user->hash = $result['login'];
         $this->index=new IndexesController();
         //$this->defineConstants();
     }
@@ -27,7 +35,6 @@ class IndexesControllerTest extends TestCase{
      * @preserveGlobalState disabled
     **/
     public function testGetIndexByNamePass(){
-        $args['name'] = 'AUT20';
         $expected = [
             'id'=>'2',  
             'symbol'=>'AUT20', 
@@ -36,8 +43,9 @@ class IndexesControllerTest extends TestCase{
             'trading_hours'=>'9:10 am  - 5:00 pm', 
             'type'=>'indices'
         ];
-
-        $return = $this->index->getIndexesByName($args);
+        $_GET['name'] = 'AUT20';
+        $_POST['hash'] = $this->user->hash; 
+        $return = $this->index->getIndexesByName();
         $output =json_decode($return, true);
        
        
@@ -59,7 +67,8 @@ class IndexesControllerTest extends TestCase{
      * @preserveGlobalState disabled
     **/
     public function testGetIndexByNameFail(){
-        $args['name'] = 'BRAComp';
+        $_GET['name'] = 'BRAComp';
+        $_POST['hash'] = $this->user->hash;
         $expected = [
             'id'=>'2',  
             'symbol'=>'AUT20', 
@@ -69,7 +78,8 @@ class IndexesControllerTest extends TestCase{
             'type'=>'indices'
         ];
 
-        $return = $this->index->getIndexesByName($args);
+        $return = $this->index->getIndexesByName();
+        
         $output =json_decode($return, true);
        
        
