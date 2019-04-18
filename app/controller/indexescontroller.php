@@ -37,6 +37,7 @@ class IndexesController{
             
             $argsToLog ['request'] = 'List Indexes';
             $argsToLog ['description'] = 'User listed the following indexes:'.json_encode($indexes);
+            $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
             LogController::post($argsToLog);
 
             return json_encode($indexes);
@@ -62,6 +63,7 @@ class IndexesController{
         
         $argsToLog ['request'] = 'Create Indexes';
         $argsToLog ['description'] = 'User tried to list indexes but database has empty. Called web api to fill database.';
+        $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
         LogController::post($argsToLog);
     } 
 
@@ -104,6 +106,7 @@ class IndexesController{
             }
             $argsToLog ['request'] = 'Get Indexes By Name';
             $argsToLog ['description'] = 'Get information to index with Name: ' . $_GET['name'];
+            $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
             LogController::post($argsToLog);
             $index= Indexes::find_by_name($_GET['name']);
             

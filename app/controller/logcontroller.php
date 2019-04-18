@@ -18,6 +18,7 @@ class LogController{
         $log->username= isset($_SESSION['username']) ? $_SESSION['username'] : $username;
         $log->operation = $args['request'];
         $log->description = $args['description'];
+        $log->ip = $args['ip'];
         $log->timestamp = date('Y-m-d H:i:s');
 
         $result=$log->save();

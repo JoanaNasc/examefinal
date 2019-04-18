@@ -114,7 +114,6 @@ class DatabaseObject{
             //$sql->debugDumpParams();exit;
             $errorInfo = $sql->errorInfo();
             if(!$errorInfo){
-                $this->safeFile();
                 return false;
             }else{
                 $this->id=self::$database->lastInsertId();
@@ -225,6 +224,23 @@ class DatabaseObject{
         fputcsv($fp, $body);
         //fechamos o ficheiro
         fclose($fp);
+    }
+    public static function update_count($ip,$count){
+        if($count>=3){
+            $query = self::$database->prepare("UPDATE ".static::$table_name." SET blocked = 1 WHERE ips = :ip LIMIT 1;");
+        }else{
+            $counter=$count+1;
+            $query = self::$database->prepare("UPDATE ".static::$table_name." SET counter = :counter WHERE ips = :ip LIMIT 1;");
+            $query->bindParam(':counter',$counter,PDO::PARAM_INT);
+        }
+        $query->bindParam(':ip',$ip);
+        $exec=$query->execute();
+        exit;
+        if($exec){
+            return true;
+        }else{
+            return false;
+        }
     }
     /* FIM DO CÓDIGO DO PADRÃO DE DESENHO: ACTIVE RECORD */
 

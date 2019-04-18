@@ -14,19 +14,21 @@ class Log extends DatabaseObject {
     protected static $table_name='logs';
 
     //nome das colunas da tabela logs
-    protected static $db_columns=['id','username','operation','timestamp','description'];    
+    protected static $db_columns=['id','username','operation','timestamp','description','ip'];    
     
     public $id;
     public $username;
     public $operation;
     public $timestamp;
     public $description;
+    public $ip;
 
     public function __construct($args=[]){
         $this->username = isset($args['username']) ? $args['username'] : '';
         $this->operation = isset($args['operation']) ? $args['operation'] : '';
         $this->timestamp = isset($args['timestamp']) ? $args['timestamp'] : '';
         $this->description = isset($args['description']) ? $args['description'] : '';
+        $this->ip = isset($args['ip']) ? $args['ip'] : '';
     }
 
     //uma vez que os logs tem de estar ordenados pela data de forma

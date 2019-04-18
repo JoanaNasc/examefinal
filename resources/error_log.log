@@ -1,0 +1,244 @@
+[17-Apr-2019 15:53:48 UTC] PHP Fatal error:  Cannot redeclare my_autoload() (previously declared in /var/www/examefinal.test/vendor/boot.php:21) in /var/www/examefinal.test/vendor/boot.php on line 33
+[17-Apr-2019 15:53:48 UTC] PHP Stack trace:
+[17-Apr-2019 15:53:48 UTC] PHP   1. {main}() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:0
+[17-Apr-2019 15:53:48 UTC] PHP   2. PHPUnit\TextUI\Command::main() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:61
+[17-Apr-2019 15:53:48 UTC] PHP   3. PHPUnit\TextUI\Command->run() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:163
+[17-Apr-2019 15:53:48 UTC] PHP   4. PHPUnit\TextUI\Command->handleArguments() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:174
+[17-Apr-2019 15:53:48 UTC] PHP   5. PHPUnit\Util\Configuration->getTestSuiteConfiguration() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:906
+[17-Apr-2019 15:53:48 UTC] PHP   6. PHPUnit\Util\Configuration->getTestSuite() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:893
+[17-Apr-2019 15:53:48 UTC] PHP   7. PHPUnit\Framework\TestSuite->addTestFiles() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:1036
+[17-Apr-2019 15:53:48 UTC] PHP   8. PHPUnit\Framework\TestSuite->addTestFile() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:625
+[17-Apr-2019 15:53:48 UTC] PHP   9. PHPUnit\Util\FileLoader::checkAndLoad() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:546
+[17-Apr-2019 15:53:48 UTC] PHP  10. PHPUnit\Util\FileLoader::load() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:47
+[17-Apr-2019 15:53:48 UTC] PHP  11. include_once() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:59
+[17-Apr-2019 15:53:53 UTC] PHP Fatal error:  Cannot redeclare my_autoload() (previously declared in /var/www/examefinal.test/vendor/boot.php:21) in /var/www/examefinal.test/vendor/boot.php on line 33
+[17-Apr-2019 15:53:53 UTC] PHP Stack trace:
+[17-Apr-2019 15:53:53 UTC] PHP   1. {main}() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:0
+[17-Apr-2019 15:53:53 UTC] PHP   2. PHPUnit\TextUI\Command::main() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:61
+[17-Apr-2019 15:53:53 UTC] PHP   3. PHPUnit\TextUI\Command->run() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:163
+[17-Apr-2019 15:53:53 UTC] PHP   4. PHPUnit\TextUI\TestRunner->getTest() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:184
+[17-Apr-2019 15:53:53 UTC] PHP   5. PHPUnit\Framework\TestSuite->addTestFiles() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Runner/BaseTestRunner.php:69
+[17-Apr-2019 15:53:53 UTC] PHP   6. PHPUnit\Framework\TestSuite->addTestFile() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:625
+[17-Apr-2019 15:53:53 UTC] PHP   7. PHPUnit\Util\FileLoader::checkAndLoad() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:546
+[17-Apr-2019 15:53:53 UTC] PHP   8. PHPUnit\Util\FileLoader::load() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:47
+[17-Apr-2019 15:53:53 UTC] PHP   9. include_once() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:59
+[17-Apr-2019 16:29:26 UTC] PHP Fatal error:  Cannot redeclare my_autoload() (previously declared in /var/www/examefinal.test/vendor/boot.php:21) in /var/www/examefinal.test/vendor/boot.php on line 33
+[17-Apr-2019 16:29:26 UTC] PHP Stack trace:
+[17-Apr-2019 16:29:26 UTC] PHP   1. {main}() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:0
+[17-Apr-2019 16:29:26 UTC] PHP   2. PHPUnit\TextUI\Command::main() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:61
+[17-Apr-2019 16:29:26 UTC] PHP   3. PHPUnit\TextUI\Command->run() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:163
+[17-Apr-2019 16:29:26 UTC] PHP   4. PHPUnit\TextUI\Command->handleArguments() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:174
+[17-Apr-2019 16:29:26 UTC] PHP   5. PHPUnit\Util\Configuration->getTestSuiteConfiguration() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:906
+[17-Apr-2019 16:29:26 UTC] PHP   6. PHPUnit\Util\Configuration->getTestSuite() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:893
+[17-Apr-2019 16:29:26 UTC] PHP   7. PHPUnit\Framework\TestSuite->addTestFiles() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:1036
+[17-Apr-2019 16:29:26 UTC] PHP   8. PHPUnit\Framework\TestSuite->addTestFile() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:625
+[17-Apr-2019 16:29:26 UTC] PHP   9. PHPUnit\Util\FileLoader::checkAndLoad() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:546
+[17-Apr-2019 16:29:26 UTC] PHP  10. PHPUnit\Util\FileLoader::load() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:47
+[17-Apr-2019 16:29:26 UTC] PHP  11. include_once() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:59
+[17-Apr-2019 16:30:03 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 52: Empty reply from server (see http://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandl in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[17-Apr-2019 16:33:38 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 52: Empty reply from server (see http://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandl in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[17-Apr-2019 16:34:14 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 52: Empty reply from server (see http://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandl in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[17-Apr-2019 16:43:46 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 52: Empty reply from server (see http://curl.haxx.se/libcurl/c/libcurl-errors.html) in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php:185
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(149): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(102): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(43): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandl in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 185
+[17-Apr-2019 18:04:32 UTC] PHP Notice:  Undefined index: login in /var/www/examefinal.test/public/callsToApi.php on line 17
+[17-Apr-2019 18:04:32 UTC] PHP Stack trace:
+[17-Apr-2019 18:04:32 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[17-Apr-2019 18:04:32 UTC] PHP   2. login() /var/www/examefinal.test/public/callsToApi.php:103
+[17-Apr-2019 18:05:09 UTC] PHP Notice:  Undefined index: login in /var/www/examefinal.test/public/callsToApi.php on line 17
+[17-Apr-2019 18:05:09 UTC] PHP Stack trace:
+[17-Apr-2019 18:05:09 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[17-Apr-2019 18:05:09 UTC] PHP   2. login() /var/www/examefinal.test/public/callsToApi.php:103
+[18-Apr-2019 09:14:54 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ClientException: Client error: `POST http://examefinal.test/api/logs/saveCsv` resulted in a `404 Not Found` response:
+<html>
+    <head>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet (truncated...)
+ in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php:113
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Middleware.php(66): GuzzleHttp\Exception\RequestException::create(Object(GuzzleHttp\Psr7\Request), Object(GuzzleHttp\Psr7\Response))
+#1 /var/www/examefinal.test/vendor/guzzlehttp/promises/src/Promise.php(203): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Response))
+#2 /var/www/examefinal.test/vendor/guzzlehttp/promises/src/Promise.php(156): GuzzleHttp\Promise\Promise::callHandler(1, Object(GuzzleHttp\Psr7\Response), Array)
+#3 /var/www/examefinal.test/vendor/guzzlehttp/promises/src/TaskQueue.php(47): GuzzleHttp\Promise\Promise::GuzzleHttp\Promise\{cl in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Exception/RequestException.php on line 113
+[18-Apr-2019 09:31:57 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:31:57 UTC] PHP Stack trace:
+[18-Apr-2019 09:31:57 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:31:57 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:32:08 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:32:08 UTC] PHP Stack trace:
+[18-Apr-2019 09:32:08 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:32:08 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:32:08 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: Passing in the "body" request option as an array to send a POST request has been deprecated. Please use the "form_params" request option to send a application/x-www-form-urlencoded request, or the "multipart" request option to send a multipart/form-data request. in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php:416
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php(119): GuzzleHttp\Client->invalidBody()
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php(131): GuzzleHttp\Client->requestAsync('POST', Object(GuzzleHttp\Psr7\Uri), Array)
+#2 /var/www/examefinal.test/public/callsToApi.php(123): GuzzleHttp\Client->request('POST', 'http://examefin...', Array)
+#3 /var/www/examefinal.test/public/callsToApi.php(101): getApi('http://examefin...', 'POST', Array)
+#4 /var/www/examefinal.test/public/callsToApi.php(139): saveCSVMoreThan7k('0c34034b3fa383b...')
+#5 {main}
+  thrown in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php on line 416
+[18-Apr-2019 09:32:40 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:32:40 UTC] PHP Stack trace:
+[18-Apr-2019 09:32:40 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:32:40 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:32:40 UTC] PHP Fatal error:  Uncaught InvalidArgumentException: Passing in the "body" request option as an array to send a POST request has been deprecated. Please use the "form_params" request option to send a application/x-www-form-urlencoded request, or the "multipart" request option to send a multipart/form-data request. in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php:416
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php(119): GuzzleHttp\Client->invalidBody()
+#1 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php(131): GuzzleHttp\Client->requestAsync('POST', Object(GuzzleHttp\Psr7\Uri), Array)
+#2 /var/www/examefinal.test/public/callsToApi.php(123): GuzzleHttp\Client->request('POST', 'http://examefin...', Array)
+#3 /var/www/examefinal.test/public/callsToApi.php(101): getApi('http://examefin...', 'POST', Array)
+#4 /var/www/examefinal.test/public/callsToApi.php(139): saveCSVMoreThan7k('0c34034b3fa383b...')
+#5 {main}
+  thrown in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Client.php on line 416
+[18-Apr-2019 09:38:19 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:38:19 UTC] PHP Stack trace:
+[18-Apr-2019 09:38:19 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:38:19 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:40:05 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:40:05 UTC] PHP Stack trace:
+[18-Apr-2019 09:40:05 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:40:05 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:40:25 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:40:25 UTC] PHP Stack trace:
+[18-Apr-2019 09:40:25 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:40:25 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:41:59 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:41:59 UTC] PHP Stack trace:
+[18-Apr-2019 09:41:59 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:41:59 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:42:24 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:42:24 UTC] PHP Stack trace:
+[18-Apr-2019 09:42:24 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:42:24 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:139
+[18-Apr-2019 09:42:55 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:42:55 UTC] PHP Stack trace:
+[18-Apr-2019 09:42:55 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:42:55 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:140
+[18-Apr-2019 09:43:09 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:43:09 UTC] PHP Stack trace:
+[18-Apr-2019 09:43:09 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:43:09 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:140
+[18-Apr-2019 09:43:28 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:43:28 UTC] PHP Stack trace:
+[18-Apr-2019 09:43:28 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:43:28 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:140
+[18-Apr-2019 09:56:25 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:56:25 UTC] PHP Stack trace:
+[18-Apr-2019 09:56:25 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:56:25 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:140
+[18-Apr-2019 09:57:12 UTC] PHP Warning:  Use of undefined constant r - assumed 'r' (this will throw an Error in a future version of PHP) in /var/www/examefinal.test/public/callsToApi.php on line 93
+[18-Apr-2019 09:57:12 UTC] PHP Stack trace:
+[18-Apr-2019 09:57:12 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 09:57:12 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:140
+[18-Apr-2019 10:05:26 UTC] PHP Notice:  Undefined variable: result in /var/www/examefinal.test/public/callsToApi.php on line 107
+[18-Apr-2019 10:05:26 UTC] PHP Stack trace:
+[18-Apr-2019 10:05:26 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 10:05:26 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:145
+[18-Apr-2019 10:05:41 UTC] PHP Notice:  Undefined variable: result in /var/www/examefinal.test/public/callsToApi.php on line 107
+[18-Apr-2019 10:05:41 UTC] PHP Stack trace:
+[18-Apr-2019 10:05:41 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 10:05:41 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:145
+[18-Apr-2019 10:18:55 UTC] PHP Warning:  require(/var/www/examefinal.test/vendor/csrf_toke_functions.php): failed to open stream: No such file or directory in /var/www/examefinal.test/vendor/boot.php on line 20
+[18-Apr-2019 10:18:55 UTC] PHP Stack trace:
+[18-Apr-2019 10:18:55 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 10:18:55 UTC] PHP   2. require() /var/www/examefinal.test/public/callsToApi.php:2
+[18-Apr-2019 10:18:55 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/examefinal.test/vendor/csrf_toke_functions.php' (include_path='.:/usr/share/php') in /var/www/examefinal.test/vendor/boot.php on line 20
+[18-Apr-2019 10:18:55 UTC] PHP Stack trace:
+[18-Apr-2019 10:18:55 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 10:18:55 UTC] PHP   2. require() /var/www/examefinal.test/public/callsToApi.php:2
+[18-Apr-2019 10:49:07 UTC] PHP Warning:  session_start(): Cannot start session when headers already sent in /var/www/examefinal.test/vendor/boot.php on line 8
+[18-Apr-2019 10:49:07 UTC] PHP Stack trace:
+[18-Apr-2019 10:49:07 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 10:49:07 UTC] PHP   2. require() /var/www/examefinal.test/public/callsToApi.php:2
+[18-Apr-2019 10:49:07 UTC] PHP   3. session_start() /var/www/examefinal.test/vendor/boot.php:8
+[18-Apr-2019 10:55:47 UTC] PHP Fatal error:  Uncaught Error: Class 'GuzzleHttp\Psr7\Response' not found in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php:76
+Stack trace:
+#0 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php(545): GuzzleHttp\Handler\EasyHandle->createResponse()
+#1 [internal function]: GuzzleHttp\Handler\CurlFactory->GuzzleHttp\Handler\{closure}(Resource id #54, '\r\n')
+#2 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/CurlHandler.php(40): curl_exec(Resource id #54)
+#3 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/Proxy.php(51): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/PrepareBodyMiddleware.php(66): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), in /var/www/examefinal.test/vendor/guzzlehttp/guzzle/src/Handler/EasyHandle.php on line 76
+[18-Apr-2019 10:58:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method app\controller\UserController::displayWelcome() in /var/www/examefinal.test/public/index.php:21
+Stack trace:
+#0 {main}
+  thrown in /var/www/examefinal.test/public/index.php on line 21
+[18-Apr-2019 11:22:45 UTC] PHP Fatal error:  Cannot redeclare my_autoload() (previously declared in /var/www/examefinal.test/vendor/boot.php:22) in /var/www/examefinal.test/vendor/boot.php on line 34
+[18-Apr-2019 11:22:45 UTC] PHP Stack trace:
+[18-Apr-2019 11:22:45 UTC] PHP   1. {main}() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:0
+[18-Apr-2019 11:22:45 UTC] PHP   2. PHPUnit\TextUI\Command::main() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:61
+[18-Apr-2019 11:22:45 UTC] PHP   3. PHPUnit\TextUI\Command->run() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:163
+[18-Apr-2019 11:22:45 UTC] PHP   4. PHPUnit\TextUI\Command->handleArguments() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:174
+[18-Apr-2019 11:22:45 UTC] PHP   5. PHPUnit\Util\Configuration->getTestSuiteConfiguration() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:906
+[18-Apr-2019 11:22:45 UTC] PHP   6. PHPUnit\Util\Configuration->getTestSuite() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:893
+[18-Apr-2019 11:22:45 UTC] PHP   7. PHPUnit\Framework\TestSuite->addTestFiles() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/Configuration.php:1036
+[18-Apr-2019 11:22:45 UTC] PHP   8. PHPUnit\Framework\TestSuite->addTestFile() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:625
+[18-Apr-2019 11:22:45 UTC] PHP   9. PHPUnit\Util\FileLoader::checkAndLoad() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:546
+[18-Apr-2019 11:22:45 UTC] PHP  10. PHPUnit\Util\FileLoader::load() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:47
+[18-Apr-2019 11:22:45 UTC] PHP  11. include_once() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:59
+[18-Apr-2019 11:22:50 UTC] PHP Fatal error:  Cannot redeclare my_autoload() (previously declared in /var/www/examefinal.test/vendor/boot.php:22) in /var/www/examefinal.test/vendor/boot.php on line 34
+[18-Apr-2019 11:22:50 UTC] PHP Stack trace:
+[18-Apr-2019 11:22:50 UTC] PHP   1. {main}() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:0
+[18-Apr-2019 11:22:50 UTC] PHP   2. PHPUnit\TextUI\Command::main() /var/www/examefinal.test/vendor/phpunit/phpunit/phpunit:61
+[18-Apr-2019 11:22:50 UTC] PHP   3. PHPUnit\TextUI\Command->run() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:163
+[18-Apr-2019 11:22:50 UTC] PHP   4. PHPUnit\TextUI\TestRunner->getTest() /var/www/examefinal.test/vendor/phpunit/phpunit/src/TextUI/Command.php:184
+[18-Apr-2019 11:22:50 UTC] PHP   5. PHPUnit\Framework\TestSuite->addTestFiles() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Runner/BaseTestRunner.php:69
+[18-Apr-2019 11:22:50 UTC] PHP   6. PHPUnit\Framework\TestSuite->addTestFile() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:625
+[18-Apr-2019 11:22:50 UTC] PHP   7. PHPUnit\Util\FileLoader::checkAndLoad() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Framework/TestSuite.php:546
+[18-Apr-2019 11:22:50 UTC] PHP   8. PHPUnit\Util\FileLoader::load() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:47
+[18-Apr-2019 11:22:50 UTC] PHP   9. include_once() /var/www/examefinal.test/vendor/phpunit/phpunit/src/Util/FileLoader.php:59
+[18-Apr-2019 11:25:29 UTC] PHP Notice:  Array to string conversion in /var/www/examefinal.test/public/callsToApi.php on line 129
+[18-Apr-2019 11:25:29 UTC] PHP Stack trace:
+[18-Apr-2019 11:25:29 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 11:25:29 UTC] PHP   2. login() /var/www/examefinal.test/public/callsToApi.php:141
+[18-Apr-2019 11:25:29 UTC] PHP   3. getApi() /var/www/examefinal.test/public/callsToApi.php:15
+[18-Apr-2019 11:36:56 UTC] PHP Notice:  Undefined variable: result in /var/www/examefinal.test/public/callsToApi.php on line 110
+[18-Apr-2019 11:36:56 UTC] PHP Stack trace:
+[18-Apr-2019 11:36:56 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 11:36:56 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:151
+[18-Apr-2019 11:37:20 UTC] PHP Notice:  Undefined variable: result in /var/www/examefinal.test/public/callsToApi.php on line 110
+[18-Apr-2019 11:37:20 UTC] PHP Stack trace:
+[18-Apr-2019 11:37:20 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 11:37:20 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:151
+[18-Apr-2019 11:37:35 UTC] PHP Notice:  Undefined variable: result in /var/www/examefinal.test/public/callsToApi.php on line 110
+[18-Apr-2019 11:37:35 UTC] PHP Stack trace:
+[18-Apr-2019 11:37:35 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 11:37:35 UTC] PHP   2. saveCSVMoreThan7k() /var/www/examefinal.test/public/callsToApi.php:151
+[18-Apr-2019 13:03:40 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /var/www/examefinal.test/vendor/csrf_toke_functions.php on line 3
+[18-Apr-2019 13:03:40 UTC] PHP Stack trace:
+[18-Apr-2019 13:03:40 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 13:03:40 UTC] PHP   2. require() /var/www/examefinal.test/public/callsToApi.php:2
+[18-Apr-2019 13:03:40 UTC] PHP   3. require() /var/www/examefinal.test/vendor/boot.php:20
+[18-Apr-2019 13:03:40 UTC] PHP   4. session_start() /var/www/examefinal.test/vendor/csrf_toke_functions.php:3
+[18-Apr-2019 13:28:17 UTC] PHP Notice:  Undefined index: csrf_token in /var/www/examefinal.test/public/callsToApi.php on line 145
+[18-Apr-2019 13:28:17 UTC] PHP Stack trace:
+[18-Apr-2019 13:28:17 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 13:31:22 UTC] PHP Notice:  Undefined index: csrf_token in /var/www/examefinal.test/public/callsToApi.php on line 143
+[18-Apr-2019 13:31:23 UTC] PHP Stack trace:
+[18-Apr-2019 13:31:23 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 13:32:43 UTC] PHP Notice:  Undefined index: csrf_token in /var/www/examefinal.test/public/callsToApi.php on line 143
+[18-Apr-2019 13:32:43 UTC] PHP Stack trace:
+[18-Apr-2019 13:32:43 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 13:41:01 UTC] PHP Notice:  Undefined index: csrf_token in /var/www/examefinal.test/public/callsToApi.php on line 143
+[18-Apr-2019 13:41:01 UTC] PHP Stack trace:
+[18-Apr-2019 13:41:01 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0
+[18-Apr-2019 13:58:44 UTC] PHP Notice:  Undefined index: csrf_token in /var/www/examefinal.test/public/callsToApi.php on line 143
+[18-Apr-2019 13:58:44 UTC] PHP Stack trace:
+[18-Apr-2019 13:58:44 UTC] PHP   1. {main}() /var/www/examefinal.test/public/callsToApi.php:0

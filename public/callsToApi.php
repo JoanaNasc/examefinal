@@ -90,7 +90,7 @@ function getAllLogsCSV($hash=NULL){
     $result = getApi($url,'POST',$body);
     print_r($result);
 }
-/*
+
 function saveCSVMoreThan7k($hash=NULL){
     $url = "http://examefinal.test/api/logs/saveCsv";
     $file = file_get_contents('/var/www/examefinal.test/resources/filesToUpload/cursophp_joana_more_than_7k.csv','r');
@@ -101,12 +101,8 @@ function saveCSVMoreThan7k($hash=NULL){
             'path' => $file
         ]
     ];
-    $headers =[ 
 
-    ];
-    //$result = getApi($url,'POST',$body);
-    $client = new Client();
-    $res = $client->request('POST', $url,$headers,$body);
+    $result = getApi($url,'POST',$body);
     print_r($result);
 }
 
@@ -124,7 +120,7 @@ function saveCSVLessThan7k($hash=NULL){
     $result = getApi($url,'POST',$body);
     print_r($result);
 }
-*/
+
 
 function getApi($url,$method,$data=null){
  
@@ -140,13 +136,14 @@ function getApi($url,$method,$data=null){
 } 
 
 
+
 $hash=login();
 
 //register();
 //alter();
-getAllIndexes($hash);
+//getAllIndexes($hash);
 //getIndexByName('AUS200',$hash);
-//getAllLogs();
+getAllLogs($hash);
 //getAllLogsCSV($hash);
 //saveCSVMoreThan7k($hash);
 //saveCSVLessThan7k($hash);

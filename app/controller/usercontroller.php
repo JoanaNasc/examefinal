@@ -27,11 +27,9 @@ class UserController{
     */
     public static function login($args){ 
         $errors=[]; 
-         
-       
-        $username=isset($args['username'])?$args['username'] :'';
-        $password=isset($args['password'])?$args['password']:'';
-
+        $username=isset($args['username'])?($args['username']) :'';
+        $password=isset($args['password'])?($args['password']):'';
+    
         if(Functions::isblank($username)){
            $errors[]= 'Username cannot be blank!';
         }
@@ -50,6 +48,7 @@ class UserController{
                 $argsToLog ['username']=$username;
                 $argsToLog ['request'] = 'Login';
                 $argsToLog ['description'] = 'Login from ip:'.$_SERVER['REMOTE_ADDR'];
+                $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
                 LogController::post($argsToLog);
                
                 return json_encode($toReturn);
@@ -97,6 +96,7 @@ class UserController{
                 $argsToLog ['username'] = $user->username;
                 $argsToLog ['request'] = 'Create User';
                 $argsToLog ['description'] = 'User Create from ip:'.$_SERVER['REMOTE_ADDR'];
+                $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
                 LogController::post($argsToLog);
                 //enviar e-mail
                 $token = bin2hex($user->email);//token gerado a partir do email   
@@ -122,12 +122,14 @@ EOT;
                     $argsToLog ['username'] = $user->username;
                     $argsToLog ['request'] = 'Send Email';
                     $argsToLog ['description'] = 'Email sent to: '.$user->email;
+                    $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
                     LogController::post($argsToLog);
                     return true;
                 }else{
                     $argsToLog ['username'] = $user->username;
                     $argsToLog ['request'] = 'Send Email';
                     $argsToLog ['description'] = 'Error sending email to: '.$user->email;
+                    $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
                     LogController::post($argsToLog);
                     $errors[] =  $argsToLog ['description'];
                     return json_encode($errors);
@@ -136,6 +138,7 @@ EOT;
                 $argsToLog ['username'] = $user->username;
                 $argsToLog ['request'] = 'Send Email';
                 $argsToLog ['description'] = 'Error sending email to: '.$user->email;
+                $argsToLog ['ip'] = $_SERVER["REMOTE_ADDR"];
                 LogController::post($argsToLog);
                 $errors[]="Error creating user.Please try again.";
                 return json_encode($errors);
@@ -151,7 +154,7 @@ EOT;
             -> reenvia para o homepage
     */
     public static function logout(){ 
-        LogController::post(['request'=>'Logout','description'=>'Logout from ip:'.$_SERVER['REMOTE_ADDR']]);
+        LogController::post(['request'=>'Logout','description'=>'Logout from ip:'.$_SERVER['REMOTE_ADDR'],$_SERVER["REMOTE_ADDR"]]);
         unset($_SESSION['username']);
         header('Location:/');
         exit;
@@ -164,16 +167,7 @@ EOT;
     public static function is_logged_in($hash): bool {
         return User::is_logged_in($hash);
     }
-    /*
-        list:
-            -> chama a funçao find_all do modelo de User para mostrar todos os utilizadores
-            -> faz render do que recebe para user_list
-    */
-    public static function list(){
-        LogController::post(['request'=>'List','description'=>'List all users']);
-        $users= User::find_all();return $users;
-        return json_encode($users);
-    }
+   
 
     /*
         confirmemail:
@@ -189,12 +183,12 @@ EOT;
         $confirmedHash=User::changeRandomPassword($email,$password,$args['newPassword']);
         
         if($confirmedHash!==0 && $confirmedHash){
-            LogController::post(['request'=>'Password changed','description'=>'Email confirmed from ip:'.$_SERVER['REMOTE_ADDR']]);
+            LogController::post(['request'=>'Password changed','description'=>'Email confirmed from ip:'.$_SERVER['REMOTE_ADDR'],$_SERVER["REMOTE_ADDR"]]);
             $message='Password Changed';
             return json_encode($message);
         }else{
             $message['message']="We were unable to verify your registration. Please try again.";
-            LogController::post(['request'=>'Confirm Email','description'=>$message['message']]);
+            LogController::post(['request'=>'Confirm Email','description'=>$message['message'],$_SERVER["REMOTE_ADDR"]]);
             $errors[]=$message;
             return json_encode($errors);
         }
